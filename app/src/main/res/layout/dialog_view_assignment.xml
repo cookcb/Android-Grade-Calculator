@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="65dp">
+        <TextView
+            android:layout_width="180dp"
+            android:layout_height="60dp"
+            android:id="@+id/dialog_average"
+            android:textSize="20sp"/>
+        <TextView
+            android:layout_width="170dp"
+            android:layout_height="60dp"
+            android:id="@+id/dialog_Weight"
+            android:textSize="20sp"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_toEndOf="@+id/dialog_average"
+            android:layout_toRightOf="@+id/dialog_average" />
+    </RelativeLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="300dp"
+            android:id="@+id/grades_table">
+        </TableLayout>
+    </ScrollView>
+
+
+</LinearLayout>

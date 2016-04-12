@@ -1,0 +1,7 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppBaseTheme" parent="Theme.AppCompat">
+        <!-- Everything Below 21 -->
+    </style>
+</resources>

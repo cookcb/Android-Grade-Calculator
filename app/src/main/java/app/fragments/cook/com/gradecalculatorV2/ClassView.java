@@ -56,7 +56,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
     private boolean projected;
     private ProgressDialog progress;
     public static final int prg_bar = 0;
-
+// HERE
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

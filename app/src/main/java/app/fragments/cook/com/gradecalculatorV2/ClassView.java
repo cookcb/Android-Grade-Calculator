@@ -199,8 +199,6 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     decimalWeight = list.get(i).getWeight() / 100.00;
                     if(list.get(i).getAverage() != 0) {
                         projectedGrade = projectedGrade - (list.get(i).getWeight() - (decimalWeight * list.get(i).getAverage()));
-                    }else{
-                        projectedGrade = 100.00;
                     }
                     currentGrade = currentGrade + (list.get(i).getAverage() * decimalWeight);
                 }

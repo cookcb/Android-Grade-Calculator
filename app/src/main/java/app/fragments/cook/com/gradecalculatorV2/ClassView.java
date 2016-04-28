@@ -181,7 +181,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
             projected = true;
             grade.setText(df.format(classToView.getProjectedGrade()));
         }
-        //Toast.makeText(parent.getContext(),"Selected: " +  pref, Toast.LENGTH_LONG);
+
     }
     public void onNothingSelected(AdapterView<?> parent){
 

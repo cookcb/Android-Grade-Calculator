@@ -186,6 +186,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
     public void onNothingSelected(AdapterView<?> parent){
 
     }
+    //Calculates projected and current grade for spinner
     public void calculateGrade(ArrayList<Assignment> list){
         int listSize = list.size();
         double currentGrade = 0.00;
@@ -208,7 +209,8 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
             classToView.setProjectedGrade(projectedGrade);
 
 
-    }                               //Calculate Class Average
+    }
+    //Calculate Class Average
     public void calculateAverage(List<Grade> list, Assignment current) {
         int size = list.size();
         int assignmentSize = 0;

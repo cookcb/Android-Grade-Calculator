@@ -12,6 +12,7 @@ import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -301,6 +302,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         names = new String[gradesList.size()];
         for(int i = 0; i < gradesList.size(); i++){
             if(gradesList.get(i).getAssignment().equals(assignment.getName())) {
+                Log.v("Delete Grade Test", "Name is: " + names[i]);
                 names[i] = gradesList.get(i).getGradeName();
             }
         }

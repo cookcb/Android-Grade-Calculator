@@ -52,7 +52,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
     private ArrayList<Assignment> assignmentList;
     private int id;
     private String IdString, listId, table, pref, prefFile;
-    private String[] names;
+    private String[] assignmentNames;
     private List<Grade>  gradesList;
     private boolean projected;
     private ProgressDialog progress;
@@ -184,6 +184,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         }
 
     }
+
     public void onNothingSelected(AdapterView<?> parent){
 
     }
@@ -234,6 +235,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         }
         current.setAverage(average);
     }                   //Calculate Assignment average
+
     public void showDialog(final Context context, Assignment assignmentToView){                     //Show grades Dialog
         //DatabaseHandler db = new DatabaseHandler(this);                                             //Database Handler
         //gradesList = db.getAllContacts(id, assignmentToView.getName());                             //Get all grades
@@ -294,27 +296,28 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         });
         gradeView.create().show();
     }          //Displaying all assignments for adding
+
     public void deleteGrade(final Context context, Assignment assignment){
         final Assignment deleteFrom = assignment;
         AlertDialog.Builder deleteView = new AlertDialog.Builder(context);
         deleteView.setTitle("Pick a Grade to Delete");
-        DatabaseHandler db = new DatabaseHandler(context);
-        names = new String[gradesList.size()];
+        List<String> GNames = new ArrayList();                                        //Grade Names Storage
         for(int i = 0; i < gradesList.size(); i++){
             if(gradesList.get(i).getAssignment().equals(assignment.getName())) {
-
-                names[i] = gradesList.get(i).getGradeName();
+                GNames.add(gradesList.get(i).getGradeName());
             }
         }
+        final String[] names = GNames.toArray(new String[GNames.size()]);           //setItems requires an Array not an ArrayList
         deleteView.setItems(names, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
+                Log.v("Delete Grade Test2", "Name is: " + assignmentNames[which]);
                 DatabaseHandler db = new DatabaseHandler(context);
-                db.deleteGrade(table, names[which]);
+
+                db.deleteGrade(table, names[which]);                                //Deletes selected grade from the database
                 gradesList.remove(which);
-                //gradesList = db.getAllContacts(id/*, deleteFrom.getName()*/);                       //Get all grades
-                calculateAverage(gradesList, deleteFrom);
-                calculateGrade(assignmentList);
+                calculateAverage(gradesList, deleteFrom);                           //Update Average Grade considering deleted assignment grade
+                calculateGrade(assignmentList);                                     // Update Overall Course Grade
                 DecimalFormat df = new DecimalFormat("0.00");
                 if (projected == true) {
                     grade.setText(df.format(classToView.getProjectedGrade()));
@@ -394,13 +397,13 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
     public void onClick(View v){
         switch(v.getId()){
             case R.id.delete_assignment:
-                names = new String[numberOfAssigns];                            //add in names
+                assignmentNames = new String[numberOfAssigns];                            //add in assignmentNames
                 for(int i = 0; i < numberOfAssigns; i++){
-                    names[i] = assignmentList.get(i).getName();
+                    assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder deleteAssignment = new AlertDialog.Builder(ClassView.this);
                 deleteAssignment.setTitle("Pick an Assignment to delete");
-                deleteAssignment.setItems(names, new DialogInterface.OnClickListener() {
+                deleteAssignment.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         DatabaseHandler db = new DatabaseHandler(ClassView.this);
@@ -424,13 +427,13 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 deleteAssignment.create().show();
                 break;
             case R.id.delete_grade:
-                names = new String[numberOfAssigns];                            //add in names
+                assignmentNames = new String[numberOfAssigns];                            //add in assignmentNames
                 for(int i = 0; i < numberOfAssigns; i++){
-                    names[i] = assignmentList.get(i).getName();
+                    assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder deleteGrade = new AlertDialog.Builder(ClassView.this);
                 deleteGrade.setTitle("Pick an Assignment to delete a grade from");
-                deleteGrade.setItems(names, new DialogInterface.OnClickListener() {
+                deleteGrade.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         deleteGrade(ClassView.this, assignmentList.get(which));     //pull grade information
@@ -445,13 +448,13 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 break;
             case R.id.add_grade_button:
                 numberOfAssigns = assignmentList.size();
-                names = new String[numberOfAssigns];
+                assignmentNames = new String[numberOfAssigns];
                 for(int i = 0; i < numberOfAssigns; i++){
-                    names[i] = assignmentList.get(i).getName();                 //add in names
+                    assignmentNames[i] = assignmentList.get(i).getName();                 //add in assignmentNames
                 }
                 AlertDialog.Builder gradesPick = new AlertDialog.Builder(ClassView.this);
                 gradesPick.setTitle("Pick an Assignment to add a grade to");
-                gradesPick.setItems(names, new DialogInterface.OnClickListener() {
+                gradesPick.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         addGrade(ClassView.this, assignmentList.get(which));    //add in grades
@@ -465,13 +468,13 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 break;
             case R.id.view_assignment_button:
                 numberOfAssigns = assignmentList.size();
-                names = new String[numberOfAssigns];                            //add in names
+                assignmentNames = new String[numberOfAssigns];                            //add in assignmentNames
                 for(int i = 0; i < numberOfAssigns; i++){
-                    names[i] = assignmentList.get(i).getName();
+                    assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder viewPick = new AlertDialog.Builder(ClassView.this);
                 viewPick.setTitle("Pick an Assignment to View");
-                viewPick.setItems(names, new DialogInterface.OnClickListener() {
+                viewPick.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         showDialog(ClassView.this, assignmentList.get(which));     //display grades for the chosen assignment
@@ -533,7 +536,6 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     }
                 });
                 builder.show();
-                //numberOfAssigns = assignmentList.size();
                 break;
 
             case R.id.clear_button:                                                                  //Loads the assignments to the view

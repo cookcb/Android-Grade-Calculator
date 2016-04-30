@@ -155,7 +155,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         numberOfAssigns = assignmentList.size();
         projected = false;                                                              //To Display the current grade on startup
         DatabaseHandler db = new DatabaseHandler(ClassView.this);
-        gradesList = db.getAllContacts(id /*, deleteFrom.getName()*/);                  //Initially retrieve all grades
+        gradesList = db.getAllGrades(id /*, deleteFrom.getName()*/);                  //Initially retrieve all grades
         calculateGrade(assignmentList);
         DecimalFormat df = new DecimalFormat("0.00");
         if (projected == true) {
@@ -302,7 +302,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         names = new String[gradesList.size()];
         for(int i = 0; i < gradesList.size(); i++){
             if(gradesList.get(i).getAssignment().equals(assignment.getName())) {
-                Log.v("Delete Grade Test", "Name is: " + names[i]);
+
                 names[i] = gradesList.get(i).getGradeName();
             }
         }

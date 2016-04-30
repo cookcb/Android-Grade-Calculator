@@ -126,7 +126,7 @@ public class DatabaseHandler extends SQLiteOpenHelper implements Serializable {
             db.close();
         }
     }
-    public List<Grade> getAllContacts(int subjectId/*, String assignment*/){
+    public List<Grade> getAllGrades(int subjectId/*, String assignment*/){
         List<Grade> gradesList = new ArrayList<Grade>();
         SQLiteDatabase db = this.getWritableDatabase();
         String selectQuery;

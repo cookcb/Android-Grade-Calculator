@@ -332,6 +332,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     }
                 });
         deleteView.create().show();
+
     }
     public void addGrade(final Context context, Assignment assignment){                     //Add grade to assignment
         final Assignment addTo = assignment;
@@ -587,45 +588,6 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 new goBack().execute(0);
 
                 break;
-//            case R.id.save_class_button:
-//
-//                    AlertDialog.Builder assignmentManag = new AlertDialog.Builder(ClassView.this);
-//                    final EditText numField = new EditText(ClassView.this);
-//                    assignmentManag.setTitle("Save Data?");
-//                    assignmentManag.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
-//                        public void onClick(DialogInterface dialog, int which) {
-//                            try {
-//                                FileOutputStream classOne = openFileOutput(listId, Context.MODE_PRIVATE);
-//                                ObjectOutputStream subjOne = new ObjectOutputStream(classOne);
-//                                subjOne.writeObject(assignmentList);
-//                                subjOne.close();
-//                                classOne.close();
-//                            } catch (IOException ioe) {
-//                            }
-//                            try {
-//                                FileOutputStream classOne = openFileOutput(IdString, Context.MODE_PRIVATE);
-//                                ObjectOutputStream subjOne = new ObjectOutputStream(classOne);
-//                                subjOne.writeObject(classToView);
-//                                subjOne.close();
-//                                classOne.close();
-//                            } catch (IOException ioe) {
-//                            }
-//                            DatabaseHandler db = new DatabaseHandler(ClassView.this);
-//                            for(int i = 0; i < gradesList.size(); i++){
-//                                db.addGrade(gradesList.get(i), id);
-//                            }
-//
-//                        }
-//                    });
-//                        assignmentManag.setNegativeButton("No", new DialogInterface.OnClickListener() {
-//                            public void onClick(DialogInterface dialog, int which) {
-//
-//                            }
-//                        });
-//                    assignmentManag.setView(numField);
-//                    assignmentManag.show();
-//                    numberOfAssigns = assignmentList.size();
-//                    break;
         }
     }
     protected Dialog onCreateDialog(int id){

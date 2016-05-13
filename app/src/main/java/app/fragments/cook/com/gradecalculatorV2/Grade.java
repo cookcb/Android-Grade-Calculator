@@ -36,13 +36,7 @@ public class Grade {
         return gradeValue;
     }
 
-    public String getAssociatedAssignment() {
-        return associatedAssignment;
-    }
 
-    public void setAssociatedAssignment(String associatedAssignment) {
-        this.associatedAssignment = associatedAssignment;
-    }
 
     public void setGradeValue(float gradeValue) {
         this.gradeValue = gradeValue;

@@ -17,9 +17,6 @@ public class Assignment implements Serializable{
         this.average = average;
         this.name = name;
     }
-    public void setWeight(double value){
-        weight = value;
-    }
     public void setName(String holder){
         name = holder;
     }

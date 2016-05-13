@@ -10,14 +10,12 @@ public class Assignment implements Serializable{
     private String name;
     private double weight;
     private double average;
-    //private ArrayList<Grade> grades;
+
 
     public Assignment(double weight, double average, String name) {
         this.weight = weight;
         this.average = average;
         this.name = name;
-        //grades = new ArrayList<Grade>();
-
     }
     public void setWeight(double value){
         weight = value;
@@ -37,28 +35,6 @@ public class Assignment implements Serializable{
     public void setAverage(double value){
         average = value;
     }
-//    public int getSize(){
-//         return grades.size();
-//    }
 
-//    public ArrayList<Grade> getGradeList(){
-//
-//        return grades;
-//    }
-
-//    public void addGrade(Grade newGrade){
-//        grades.add(newGrade);
-//    }
-
-//    public void calculateAverage(){
-//        int size = grades.size();
-//        double total = 0;
-//        double average;
-//        for(int i = 0; i < size; i++){
-//            total = total + grades.get(i).getGradeValue();
-//        }
-//        average = total/size;
-//        this.average = average;
-//    }
 
 }

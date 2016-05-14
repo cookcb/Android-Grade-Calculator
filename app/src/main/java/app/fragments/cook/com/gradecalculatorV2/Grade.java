@@ -10,6 +10,9 @@ public class Grade {
     private float gradeValue;
     private String associatedAssignment;
 
+    public Grade(){
+
+    }
     public Grade(String assignment, String gradeName, float gradeValue, int id){
         this.assignment = assignment;
         this.gradeName = gradeName;

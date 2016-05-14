@@ -107,8 +107,7 @@ public class MainActivity extends Activity implements OnClickListener {
         viewButton6.setOnClickListener(this);
         Button viewButton7 = (Button)this.findViewById(R.id.view_button_seven);
         viewButton7.setOnClickListener(this);
-//        Button deleteAll = (Button)this.findViewById(R.id.clear_all_button);
-//        deleteAll.setOnClickListener(this);
+
 
 
     }

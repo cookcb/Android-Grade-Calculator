@@ -8,7 +8,6 @@ public class Grade {
     private String assignment;
     private String gradeName;
     private float gradeValue;
-    private String associatedAssignment;
 
     public Grade(){
 

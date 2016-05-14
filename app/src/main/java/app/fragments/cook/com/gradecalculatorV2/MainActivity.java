@@ -46,10 +46,6 @@ public class MainActivity extends Activity implements OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();          //Request for the ads
-        mAdView.loadAd(adRequest);
-
         nameOne = (TextView) this.findViewById(R.id.edit_text_one);
         SharedPreferences retrieve = getSharedPreferences("One", MODE_PRIVATE);
         String name = retrieve.getString("class_one_name", "Enter class name here");

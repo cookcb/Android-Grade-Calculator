@@ -311,7 +311,6 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         deleteView.setItems(names, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                Log.v("Delete Grade Test2", "Name is: " + assignmentNames[which]);
                 DatabaseHandler db = new DatabaseHandler(context);
 
                 db.deleteGrade(table, names[which]);                                //Deletes selected grade from the database
@@ -403,7 +402,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder deleteAssignment = new AlertDialog.Builder(ClassView.this);
-                deleteAssignment.setTitle("Pick an Assignment to delete");
+                deleteAssignment.setTitle("Pick a Category to delete");
                 deleteAssignment.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -433,7 +432,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder deleteGrade = new AlertDialog.Builder(ClassView.this);
-                deleteGrade.setTitle("Pick an Assignment to delete a grade from");
+                deleteGrade.setTitle("Pick a Category to delete a grade from");
                 deleteGrade.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -454,7 +453,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     assignmentNames[i] = assignmentList.get(i).getName();                 //add in assignmentNames
                 }
                 AlertDialog.Builder gradesPick = new AlertDialog.Builder(ClassView.this);
-                gradesPick.setTitle("Pick an Assignment to add a grade to");
+                gradesPick.setTitle("Pick a Category to add a grade to");
                 gradesPick.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -474,7 +473,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder viewPick = new AlertDialog.Builder(ClassView.this);
-                viewPick.setTitle("Pick an Assignment to View");
+                viewPick.setTitle("Pick an Category to View");
                 viewPick.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

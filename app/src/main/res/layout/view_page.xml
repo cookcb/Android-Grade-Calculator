@@ -61,7 +61,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Add Assignment"
+            android:text="Add Category"
             android:id="@+id/add_assignment_button"
             android:layout_below="@+id/add_grade_button"
             android:layout_alignParentLeft="true"
@@ -69,7 +69,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="View Assignment"
+            android:text="View Grades"
             android:id="@+id/view_assignment_button"
             android:layout_below="@+id/add_assignment_button"
             android:layout_alignParentLeft="true"
@@ -85,7 +85,7 @@
         <Button
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="Delete Assignment"
+            android:text="Delete Category"
             android:id="@+id/delete_assignment"
             android:layout_below="@+id/delete_grade"
             android:layout_alignParentLeft="true"

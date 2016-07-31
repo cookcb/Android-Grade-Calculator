@@ -1,5 +1,6 @@
 # Android-Grade-Calculator
-Android application that will keep track of class grades and assignments. Currently still under construction.
+Android application that will keep track of class grades and assignments.
 
-Allows a user to keep track up up to 7 school courses. For each course, once can put in the grades along wiht associated weights returned by their instructors and the application will present the user with an calculated overall course grade. 
-This allows for easy management of grades so a student will always know where they stand in a course.
+Allows a user to keep track up up to 7 school classes. For each course, the user can input grades along with their associated weights and the application will present the user with a calculated overall course grade. This allows for easy management throughout the year so the user can always know how well they are doing in a course.
+
+Currently working on minor bugs with the user interface. Will be released to the play store soon.

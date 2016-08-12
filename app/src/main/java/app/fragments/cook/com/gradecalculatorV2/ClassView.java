@@ -540,7 +540,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
 
             case R.id.clear_button:                                                                  //Loads the assignments to the view
                 AlertDialog.Builder delete = new AlertDialog.Builder(ClassView.this);
-                delete.setTitle("This will clear all the data related to this class. Are you sure you want to do this?");
+                delete.setTitle("This will clear all the data related to this class. Continue anyway?");
                 delete.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

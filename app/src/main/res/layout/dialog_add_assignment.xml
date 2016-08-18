@@ -6,7 +6,7 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        android:text="Add Assignment"
+        android:text="Add Category"
         android:textSize="40sp"/>
     <EditText
         android:layout_width="match_parent"

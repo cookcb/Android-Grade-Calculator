@@ -373,8 +373,6 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     DatabaseHandler db = new DatabaseHandler(context);
                     Grade fill = new Grade(addTo.getName(), addName.getText().toString(), Float.parseFloat(addValue.getText().toString()), id);
                     gradesList.add(fill);
-//                db.addGrade(fill, id);
-//                gradesList = db.getAllContacts(id, addTo.getName());                       //Get all grades
                     calculateAverage(gradesList, addTo);
                     calculateGrade(assignmentList);
                     DecimalFormat df = new DecimalFormat("0.00");

@@ -471,7 +471,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                     assignmentNames[i] = assignmentList.get(i).getName();
                 }
                 AlertDialog.Builder viewPick = new AlertDialog.Builder(ClassView.this);
-                viewPick.setTitle("Pick an Category to View");
+                viewPick.setTitle("Pick a Category to View");
                 viewPick.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {

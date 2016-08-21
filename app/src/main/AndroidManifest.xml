@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="app.fragments.cook.com.gradecalculatorV2"
-    android:versionCode = "12"
-    android:versionName = "Beta-9">
+    android:versionCode = "13"
+    android:versionName = "Final-Beta-1">
 
     <application
         android:allowBackup="true"

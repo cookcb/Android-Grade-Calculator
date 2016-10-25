@@ -67,7 +67,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
         Intent receive = getIntent();
         IdString = receive.getStringExtra("idString");
         listId = receive.getStringExtra("listString");
-        if(IdString.equals("Class One")) {
+        if(IdString.equals("Class One")) {                                                              //Identifies idString from Main View to determine the class
             classToView = (Subject) receive.getSerializableExtra("C1");
             assignmentList = (ArrayList<Assignment>) receive.getSerializableExtra("list");
             table = "Class_One";

@@ -237,8 +237,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
     }                   //Calculate Assignment average
 
     public void showDialog(final Context context, Assignment assignmentToView){                     //Show grades Dialog
-        //DatabaseHandler db = new DatabaseHandler(this);                                             //Database Handler
-        //gradesList = db.getAllContacts(id, assignmentToView.getName());                             //Get all grades
+
         calculateAverage(gradesList, assignmentToView);                                             //Set new average
         AlertDialog.Builder gradeView = new AlertDialog.Builder(context);
         LayoutInflater inflater = ClassView.this.getLayoutInflater();
@@ -294,8 +293,8 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
 
             }
         });
-        gradeView.create().show();
-    }          //Displaying all assignments for adding
+        gradeView.create().show();                                                   //Displaying all assignments for adding
+    }
 
     public void deleteGrade(final Context context, Assignment assignment){
         final Assignment deleteFrom = assignment;

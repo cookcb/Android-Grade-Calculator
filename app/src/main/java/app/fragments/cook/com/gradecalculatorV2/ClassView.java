@@ -267,7 +267,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 value.setText("Grade");
                 name.setPaintFlags(name.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                 value.setPaintFlags(value.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-                name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);                   //Set Text to 30 sp
+                name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);                   
                 value.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
                 row.addView(filler);
                 row.addView(name);
@@ -278,8 +278,8 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 if(gradesList.get(i - 1).getAssignment().equals(assignmentToView.getName())) {
                     name.setText(gradesList.get(i - 1).getGradeName());
                     value.setText(Float.toString(gradesList.get(i - 1).getGradeValue()));
-                    name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);                   //Set Text to 30 sp
-                    value.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);                  //Set Text to 30 sp
+                    name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
+                    value.setTextSize(TypedValue.COMPLEX_UNIT_SP, 20);
                     row.addView(filler);
                     row.addView(name);
                     row.addView(filler2);
@@ -433,7 +433,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 deleteGrade.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        deleteGrade(ClassView.this, assignmentList.get(which));     //pull grade information
+                        deleteGrade(ClassView.this, assignmentList.get(which));         //pull grade information
                     }
                 });
                 deleteGrade.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -454,7 +454,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 gradesPick.setItems(assignmentNames, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        addGrade(ClassView.this, assignmentList.get(which));    //add in grades
+                        addGrade(ClassView.this, assignmentList.get(which));              //add in grades
                     }
                 });
                 gradesPick.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
@@ -535,7 +535,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 builder.show();
                 break;
 
-            case R.id.clear_button:                                                                  //Loads the assignments to the view
+            case R.id.clear_button:
                 AlertDialog.Builder delete = new AlertDialog.Builder(ClassView.this);
                 delete.setTitle("The data for this class will be deleted. Continue?");
                 delete.setPositiveButton("Yes", new DialogInterface.OnClickListener() {

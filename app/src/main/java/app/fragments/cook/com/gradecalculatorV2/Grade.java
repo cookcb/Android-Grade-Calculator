@@ -38,11 +38,10 @@ public class Grade {
         return gradeValue;
     }
 
-
-
     public void setGradeValue(float gradeValue) {
         this.gradeValue = gradeValue;
     }
+
     public int getId() {
         return id;
     }

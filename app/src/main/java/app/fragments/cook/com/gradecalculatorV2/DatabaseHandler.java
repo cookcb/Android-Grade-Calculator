@@ -28,15 +28,15 @@ public class DatabaseHandler extends SQLiteOpenHelper implements Serializable {
     private static final String TABLE_FIVE = "Class_Five";
     private static final String TABLE_SIX = "Class_Six";
     private static final String TABLE_SEVEN = "Class_Seven";
-    //common column names
 
-
+    //Column names
 
     private static final String GRADE_ID = "id";
     private static final String ASSIGNMENT_NAME = "Assignment";
     private static final String GRADE_NAME = "Name";
     private static final String GRADE_VALUE = "Grade";
     public static final String[] ALL_KEYS = new String[] {GRADE_ID, ASSIGNMENT_NAME, GRADE_NAME, GRADE_VALUE};
+
     //Table Create Statements
     private static final String CREATE_TABLE_ONE = "CREATE TABLE " + TABLE_ONE + "(" + GRADE_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " + ASSIGNMENT_NAME +
             " TEXT, " + GRADE_NAME + " TEXT, " + GRADE_VALUE + " INTEGER, " + "UNIQUE(" + ASSIGNMENT_NAME + ", " + GRADE_NAME + ", " + GRADE_VALUE + ") ON CONFLICT IGNORE);";
@@ -126,7 +126,7 @@ public class DatabaseHandler extends SQLiteOpenHelper implements Serializable {
             db.close();
         }
     }
-    public List<Grade> getAllGrades(int subjectId/*, String assignment*/){
+    public List<Grade> getAllGrades(int subjectId){
         List<Grade> gradesList = new ArrayList<Grade>();
         SQLiteDatabase db = this.getWritableDatabase();
         String selectQuery;
@@ -149,13 +149,11 @@ public class DatabaseHandler extends SQLiteOpenHelper implements Serializable {
         if(cursor.moveToFirst()){
             do {
                 Grade grade = new Grade();
-                //if(assignment.equals(cursor.getString(1))) {
                     grade.setId(Integer.parseInt(cursor.getString(0)));
                     grade.setAssignment(cursor.getString(1));
                     grade.setGradeName(cursor.getString(2));
                     grade.setGradeValue(Float.parseFloat(cursor.getString(3)));
                     gradesList.add(grade);
-                //}
             }while(cursor.moveToNext());
         }
         Log.d("Initial_cursor_CHECK", Integer.toString(cursor.getCount()));
@@ -189,7 +187,6 @@ public class DatabaseHandler extends SQLiteOpenHelper implements Serializable {
     }
     public Cursor getAllRows(String table) {                                                    //Collects every row in the specified table into a cursor
         SQLiteDatabase db = this.getWritableDatabase();
-        //Cursor c = db.query(true, TABLE_ONE, ALL_KEYS, where, null, null, null, null, null);
         Cursor c = db.rawQuery("SELECT  * FROM " + table, null);
         Log.d("Initial_cursor_TWO", Integer.toString(c.getCount()));
         if(c != null){

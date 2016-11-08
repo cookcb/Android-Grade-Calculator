@@ -21,16 +21,21 @@ public class Subject implements Serializable{
     public String getName(){
         return name;
     }
+
     public void setName(String name){
         this.name = name;
     }
+
     public double getGrade(){
         return grade;
     }
+
     public void setGrade(double value){
         grade = value;
     }
+
     public void setProjectedGrade(double value){ projectedGrade = value;}
+
     public double getProjectedGrade(){
         return projectedGrade;
     }

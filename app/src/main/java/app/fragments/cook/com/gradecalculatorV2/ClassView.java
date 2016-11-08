@@ -12,7 +12,6 @@ import android.content.SharedPreferences;
 import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.util.Log;
 import android.util.TypedValue;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -37,10 +36,6 @@ import java.util.List;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.Toast;
 
-
-/**
- * Created by cbcoo_000 on 6/23/2015.
- */
 
 
 public class ClassView extends Activity implements OnClickListener, OnItemSelectedListener{
@@ -267,7 +262,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
                 value.setText("Grade");
                 name.setPaintFlags(name.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
                 value.setPaintFlags(value.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);
-                name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);                   
+                name.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
                 value.setTextSize(TypedValue.COMPLEX_UNIT_SP, 30);
                 row.addView(filler);
                 row.addView(name);

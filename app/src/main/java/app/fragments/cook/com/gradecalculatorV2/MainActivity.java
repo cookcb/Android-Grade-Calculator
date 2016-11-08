@@ -17,10 +17,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
-
-import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdView;
-
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -108,7 +104,7 @@ public class MainActivity extends Activity implements OnClickListener {
 
     }
     @Override
-    public void onBackPressed() {                                                    //When the back button is pressed
+    public void onBackPressed() {
         Intent mainActivity = new Intent(Intent.ACTION_MAIN);
         mainActivity.addCategory(Intent.CATEGORY_HOME);
         mainActivity.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -559,7 +555,7 @@ public class MainActivity extends Activity implements OnClickListener {
                     }
                 }
                 placeHolder = class_five;
-            }else if (subjName[0].equals("Class Six")) {                 //Class 5 subheading
+            }else if (subjName[0].equals("Class Six")) {                 //Class 6 subheading
                 FILENAME = "Class Six";
                 LISTNAME = "List Six";
 
@@ -605,7 +601,7 @@ public class MainActivity extends Activity implements OnClickListener {
                     }
                 }
                 placeHolder = class_six;
-            }else {                 //Class 7 subheading
+            }else {                                                                     //Class 7 subheading
                 FILENAME = "Class Seven";
                 LISTNAME = "List Seven";
 

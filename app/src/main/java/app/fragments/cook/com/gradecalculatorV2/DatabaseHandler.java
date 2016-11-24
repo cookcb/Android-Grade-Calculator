@@ -160,9 +160,10 @@ public class DatabaseHandler extends SQLiteOpenHelper implements Serializable {
         cursor.close();
         return gradesList;
     }
-    public void deleteGrade(String table, String name){                                             //Delete single grade
+    public void deleteGrade(String table, String gradeName, String assignment){                     //Delete single grade
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(table, GRADE_NAME + "='" + name + "'", null);
+
+        db.delete(table, GRADE_NAME + "='" + gradeName + "'", null);
 
     }
     public void deleteAssignment(String table, String assignmentName){                              //Delete Assignment and grades within it

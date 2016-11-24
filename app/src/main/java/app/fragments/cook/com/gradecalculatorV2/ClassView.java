@@ -307,7 +307,7 @@ public class ClassView extends Activity implements OnClickListener, OnItemSelect
             public void onClick(DialogInterface dialog, int which) {
                 DatabaseHandler db = new DatabaseHandler(context);
 
-                db.deleteGrade(table, names[which]);                                //Deletes selected grade from the database
+                db.deleteGrade(table, names[which], deleteFrom.getName());                                //Deletes selected grade from the database
                 gradesList.remove(which);
                 calculateAverage(gradesList, deleteFrom);                           //Update Average Grade considering deleted assignment grade
                 calculateGrade(assignmentList);                                     // Update Overall Course Grade
